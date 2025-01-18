@@ -1,1 +1,561 @@
-# mywebsite
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Emily Ross | Graphic Designer</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --primary-teal: #2A9D8F;
+            --light-teal: #64CCC5;
+            --dark-teal: #264653;
+            --white: #FFFFFF;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Poppins', sans-serif;
+        }
+
+        /* Header Section */
+        header {
+            background: linear-gradient(rgba(42, 157, 143, 0.95), rgba(38, 70, 83, 0.95)), url('https://images.unsplash.com/photo-1542744173-8e7e53415bb0?ixlib=rb-1.2.1&auto=format&fit=crop&w=1950&q=80') center/cover;
+            color: var(--white);
+            padding: 2rem;
+            text-align: center;
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .header-content {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .profile-img {
+            width: 200px;
+            height: 200px;
+            border-radius: 50%;
+            margin-bottom: 2rem;
+            border: 4px solid var(--white);
+            box-shadow: 0 0 20px rgba(0,0,0,0.2);
+        }
+
+        .cta-button {
+            background: var(--white);
+            color: var(--primary-teal);
+            padding: 1rem 2rem;
+            border: none;
+            border-radius: 30px;
+            font-size: 1.2rem;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+        }
+
+        .cta-button:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 6px 20px rgba(0,0,0,0.3);
+        }
+
+        /* Portfolio Section */
+        .portfolio {
+            padding: 4rem 2rem;
+            background: var(--white);
+        }
+
+        .portfolio h2 {
+            text-align: center;
+            margin-bottom: 3rem;
+            color: var(--dark-teal);
+        }
+
+        .portfolio-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .portfolio-item {
+            position: relative;
+            overflow: hidden;
+            border-radius: 10px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+        }
+
+        .portfolio-item img {
+            width: 100%;
+            height: 300px;
+            object-fit: cover;
+            transition: transform 0.3s ease;
+        }
+
+        /* Adding portfolio items */
+        .portfolio-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .portfolio-item {
+            position: relative;
+            overflow: hidden;
+            border-radius: 10px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+        }
+
+        /* Services Section */
+        .services {
+            background: #f8f9fa;
+            padding: 4rem 2rem;
+        }
+
+        .services h2 {
+            text-align: center;
+            margin-bottom: 3rem;
+            color: var(--dark-teal);
+        }
+
+        .service-card {
+            background: var(--white);
+            padding: 2rem;
+            border-radius: 10px;
+            text-align: center;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+            transition: transform 0.3s ease;
+        }
+
+        .service-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .service-card i {
+            font-size: 3rem;
+            color: var(--primary-teal);
+            margin-bottom: 1.5rem;
+        }
+
+        /* Testimonials Section */
+        .testimonials {
+            padding: 4rem 2rem;
+            background: var(--white);
+        }
+
+        .testimonials h2 {
+            text-align: center;
+            margin-bottom: 3rem;
+            color: var(--dark-teal);
+        }
+
+        .testimonial-card {
+            background: #f8f9fa;
+            padding: 2rem;
+            border-radius: 10px;
+            text-align: center;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+        }
+
+        /* Contact Form */
+        .contact {
+            background: var(--dark-teal);
+            color: var(--white);
+            padding: 4rem 2rem;
+        }
+
+        .contact h2 {
+            text-align: center;
+            margin-bottom: 3rem;
+        }
+
+        input, textarea {
+            width: 100%;
+            padding: 1rem;
+            border: none;
+            border-radius: 5px;
+            margin-top: 0.5rem;
+            background: rgba(255,255,255,0.9);
+        }
+
+        /* Footer */
+        footer {
+            background: var(--dark-teal);
+            color: var(--white);
+            padding: 2rem;
+            text-align: center;
+        }
+
+        .social-links a {
+            color: var(--white);
+            margin: 0 1rem;
+            font-size: 1.5rem;
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+
+        .social-links a:hover {
+            color: var(--light-teal);
+        }
+
+        .footer-logo {
+            width: 120px;
+            margin-bottom: 1.5rem;
+        }
+
+        .footer-links a {
+            color: var(--white);
+            text-decoration: none;
+            margin: 0 1rem;
+            transition: color 0.3s ease;
+        }
+
+        .footer-links a:hover {
+            color: var(--light-teal);
+        }
+
+        @media (max-width: 768px) {
+            .portfolio-grid,
+            .services-grid,
+            .testimonial-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="header-content">
+            <img src="https://emilyrossdesigns.pro/emily1.jpg" alt="Emily Ross" class="profile-img">
+            <h1>Creative Designs That Bring Your Brand to Life</h1>
+            <p style="margin-bottom: 30px;">Freelance Graphic Designer based in London, UK</p>
+            <a href="mailto:hello@emilyrossdesigns.pro?subject=Design%20Project%20Inquiry&body=Hi%20Emily%2C%0A%0AI'm%20interested%20in%20discussing%20a%20potential%20design%20project.%20Could%20we%20schedule%20a%20consultation%3F%0A%0ABest%20regards" class="cta-button" style="margin-top: 20px;">Work With Me</a>        </div>
+    </header>
+
+    <section class="portfolio" id="portfolio">
+        <h2>Portfolio</h2>
+        <div class="portfolio-grid">
+            <div class="portfolio-item">
+                <img src="https://images.unsplash.com/photo-1561070791-2526d30994b5?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=80" alt="Brand Design">
+                <div class="portfolio-overlay">
+                    <h3>Brand Design</h3>
+                    <p>Corporate Identity</p>
+                </div>
+            </div>
+            <div class="portfolio-item">
+                <img src="https://images.unsplash.com/photo-1542744094-3a31f272c490?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=80" alt="UI Design">
+                <div class="portfolio-overlay">
+                    <h3>UI Design</h3>
+                    <p>Mobile App Interface</p>
+                </div>
+            </div>
+            <div class="portfolio-item">
+                <img src="https://images.unsplash.com/photo-1517245386807-bb43f82c33c4?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=80" alt="Print Design">
+                <div class="portfolio-overlay">
+                    <h3>Print Design</h3>
+                    <p>Marketing Materials</p>
+                </div>
+            </div>
+        </div>
+        <style>
+            .portfolio {
+                padding: 5rem 2rem;
+                background: #f8f9fa;
+            }
+            
+            .portfolio h2 {
+                text-align: center;
+                font-size: 2.5rem;
+                margin-bottom: 3rem;
+                color: #333;
+            }
+            
+            .portfolio-grid {
+                display: grid;
+                grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+                gap: 2rem;
+                max-width: 1200px;
+                margin: 0 auto;
+            }
+            
+            .portfolio-item {
+                position: relative;
+                border-radius: 15px;
+                overflow: hidden;
+                box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+                transition: transform 0.3s ease;
+            }
+            
+            .portfolio-item:hover {
+                transform: translateY(-5px);
+            }
+            
+            .portfolio-item img {
+                width: 100%;
+                height: 300px;
+                object-fit: cover;
+                display: block;
+            }
+            
+            .portfolio-overlay {
+                position: absolute;
+                bottom: 0;
+                left: 0;
+                right: 0;
+                background: linear-gradient(to top, rgba(0,0,0,0.8), transparent);
+                padding: 1.5rem;
+                color: white;
+                transform: translateY(100%);
+                transition: transform 0.3s ease;
+            }
+            
+            .portfolio-item:hover .portfolio-overlay {
+                transform: translateY(0);
+            }
+            
+            .portfolio-overlay h3 {
+                font-size: 1.5rem;
+                margin-bottom: 0.5rem;
+            }
+            
+            .portfolio-overlay p {
+                font-size: 1rem;
+                opacity: 0.9;
+            }
+        </style>
+    </section>
+
+    <section class="about" id="about">
+        <style>
+            .about-content {
+                max-width: 1200px;
+                margin: 0 auto;
+                padding: 4rem 2rem;
+            }
+
+            .about-grid {
+                display: grid;
+                grid-template-columns: 3fr 1fr;
+                gap: 4rem;
+                margin-top: 2rem;
+            }
+
+            .intro-text {
+                font-size: 1.25rem;
+                line-height: 1.6;
+                margin-bottom: 1.5rem;
+                color: var(--dark-gray);
+            }
+
+            .detail-text {
+                margin-bottom: 2rem;
+                line-height: 1.6;
+            }
+
+            .expertise-list {
+                display: flex;
+                flex-wrap: wrap;
+                gap: 1rem;
+                margin-bottom: 2rem;
+            }
+
+            .expertise-item {
+                background-color: var(--light-teal);
+                padding: 0.5rem 1rem;
+                border-radius: 20px;
+                font-size: 0.9rem;
+            }
+
+            .cta-container {
+                display: flex;
+                gap: 1rem;
+            }
+
+            .cta-button {
+                padding: 0.8rem 1.5rem;
+                border-radius: 25px;
+                text-decoration: none;
+                font-weight: 600;
+                transition: all 0.3s ease;
+            }
+
+            .primary {
+                background-color: var(--teal);
+                color: rgb(66, 53, 53);
+            }
+
+            .secondary {
+                border: 2px solid var(--teal);
+                color: var(--teal);
+            }
+
+            .about-stats {
+                display: grid;
+                grid-template-columns: 1fr;
+                gap: 2rem;
+            }
+
+            .stat-item {
+                text-align: center;
+            }
+
+            .stat-number {
+                display: block;
+                font-size: 2.5rem;
+                font-weight: 700;
+                color: var(--teal);
+            }
+
+            .stat-label {
+                font-size: 0.9rem;
+                color: var(--dark-gray);
+            }
+
+            @media (max-width: 768px) {
+                .about-grid {
+                    grid-template-columns: 1fr;
+                }
+            }
+        </style>
+        <div class="about-content">
+            <h2>About Emily</h2>
+            <div class="about-grid">
+                <div class="about-text">
+                    <p class="intro-text">With over 8 years of experience in graphic design, I specialize in creating memorable brand identities and engaging visual experiences.</p>
+                    <p class="detail-text">My approach combines creativity with strategic thinking to deliver designs that not only look great but also achieve your business objectives. I've had the privilege of working with clients across various industries, from startups to established brands, helping them tell their unique stories through compelling visual design.</p>
+                    <div class="expertise-list">
+                        <span class="expertise-item">Brand Strategy</span>
+                        <span class="expertise-item">Visual Design</span>
+                        <span class="expertise-item">Digital Media</span>
+                        <span class="expertise-item">Print Design</span>
+                    </div>
+                    <div class="cta-container">
+                        <a href="https://www.dropbox.com/scl/fi/lfymnr8soxq6cxlji6pll/emily_resume.pdf?rlkey=uyy30kgdr9z0qv4g3377cos7r&st=6t6x5pwf&dl=0" class="cta-button primary">Download CV</a>
+                        <a href="https://www.behance.net/gallery/150886741/Trialbum-App-UXUI-Design?tracking_source=search_projects%7Cui%2Fux+ui+design" class="cta-button secondary">View Portfolio</a>
+                    </div>
+                </div>
+                <div class="about-stats">
+                    <div class="stat-item">
+                        <span class="stat-number">8+</span>
+                        <span class="stat-label">Years Experience</span>
+                    </div>
+                    <div class="stat-item">
+                        <span class="stat-number">150+</span>
+                        <span class="stat-label">Projects Completed</span>
+                    </div>
+                    <div class="stat-item">
+                        <span class="stat-number">50+</span>
+                        <span class="stat-label">Happy Clients</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <section class="services" id="services">
+        <h2>Services</h2>
+        <div class="services-grid">
+            <div class="service-card">
+                <i class="fas fa-paint-brush"></i>
+                <h3>Logo Design</h3>
+                <p>Create a unique and memorable brand identity that sets you apart from the competition.</p>
+            </div>
+            <div class="service-card">
+                <i class="fas fa-palette"></i>
+                <h3>Branding</h3>
+                <p>Develop comprehensive brand guidelines and visual identity systems.</p>
+            </div>
+            <div class="service-card">
+                <i class="fas fa-desktop"></i>
+                <h3>UI/UX Design</h3>
+                <p>Design intuitive and engaging user interfaces for web and mobile applications.</p>
+            </div>
+        </div>
+    </section>
+
+    <section class="testimonials" id="testimonials">
+        <h2>Client Testimonials</h2>
+        <div class="testimonial-grid">
+            <div class="testimonial-card">
+                <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?ixlib=rb-1.2.1&auto=format&fit=crop&w=100&q=80" alt="Client 1" style="border-radius: 50%; width: 80px; height: 80px; margin-bottom: 1rem;">
+                <p>"Emily's design work transformed our brand completely. Her attention to detail and creativity is outstanding."</p>
+                <h4>John Smith</h4>
+                <p>CEO, Tech Startup</p>
+            </div>
+            <div class="testimonial-card">
+                <img src="https://images.unsplash.com/photo-1438761681033-6461ffad8d80?ixlib=rb-1.2.1&auto=format&fit=crop&w=100&q=80" alt="Client 2" style="border-radius: 50%; width: 80px; height: 80px; margin-bottom: 1rem;">
+                <p>"Working with Emily was a pleasure. She understood our vision perfectly and delivered beyond expectations."</p>
+                <h4>Sarah Johnson</h4>
+                <p>Marketing Director</p>
+            </div>
+        </div>
+    </section>
+
+    <section class="contact" id="contact">
+        <h2>Get in Touch</h2>
+        <div class="contact-form">
+            <form id="contactForm">
+                <div class="form-group">
+                    <label for="name">Name</label>
+                    <input type="text" id="name" required>
+                </div>
+                <div class="form-group">
+                    <label for="email">Email</label>
+                    <input type="email" id="email" required>
+                </div>
+                <div class="form-group">
+                    <label for="subject">Subject</label>
+                    <input type="text" id="subject" required>
+                </div>
+                <div class="form-group">
+                    <label for="message">Message</label>
+                    <textarea id="message" rows="5" required></textarea>
+                </div>
+                <button type="submit" class="cta-button">Send Message</button>
+            </form>
+            <div id="confirmationMessage" style="display: none; text-align: center; padding: 20px; color: #4CAF50; font-size: 1.2em;">
+                Thank you for your message. I have received it and will respond shortly.
+            </div>
+        </div>
+        <script>
+            document.getElementById('contactForm').addEventListener('submit', function(e) {
+                e.preventDefault();
+                this.style.display = 'none';
+                document.getElementById('confirmationMessage').style.display = 'block';
+            });
+        </script>
+    </section>
+    <footer>
+        <img src="https://emilyrossdesigns.pro/logo.png" alt="Emily Ross Logo" class="footer-logo" style="border: 3px solid white; border-radius: 50%;">
+        <div class="social-links">
+            <a href="https://www.instagram.com"><i class="fab fa-instagram"></i></a>
+            <a href="https://www.linkedin.com"><i class="fab fa-linkedin"></i></a>
+            <a href="https://www.behance.com"><i class="fab fa-behance"></i></a>
+        </div>
+        <p>© 2024 Emily Ross. All rights reserved.</p>
+        <div class="footer-links">
+            <a href="#">Privacy Policy</a> | <a href="#">Terms of Service</a>
+        </div>
+    </footer>
+
+    <script>
+        // Add hover effects for portfolio items
+        document.querySelectorAll('.portfolio-item').forEach(item => {
+            item.addEventListener('mouseenter', () => {
+                item.querySelector('.portfolio-overlay').style.opacity = '1';
+            });
+            item.addEventListener('mouseleave', () => {
+                item.querySelector('.portfolio-overlay').style.opacity = '0';
+            });
+        });
+    </script>
+</body>
+</html>
